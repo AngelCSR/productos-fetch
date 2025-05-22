@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Lista productos</h1>
-    <table id="lista-prod">
+    <table id="lista-prod" border="1">
 
     </table>
     <script>
@@ -19,15 +19,23 @@
                 clolumnaNombre=document.createElement("td");
                 clolumnaPrecio=document.createElement("td");
                 clolumnaCategoria=document.createElement("td");
+                clolumnaComentarios=document.createElement("td");
                 clolumnaNombre.innerHTML=producto.nombre;
                 clolumnaPrecio.innerHTML=producto.precio;
                 clolumnaCategoria.innerHTML=producto.categoria;
+                for(comentario of producto.comentarios){
+                    nuevoParrafo=document.createElement("p");
+                    nuevoParrafo.innerHTML=comentario;
+                    clolumnaComentarios.appendChild(nuevoParrafo);
+                }
+
                 //agrego las columnas a la fila
                 nuevaFila.appendChild(clolumnaNombre);
                 nuevaFila.appendChild(clolumnaPrecio);
                 nuevaFila.appendChild(clolumnaCategoria);
+                nuevaFila.appendChild(clolumnaComentarios);
                 document.getElementById("lista-prod").appendChild(nuevaFila);
-            }
+            } 
         })
     </script>
 

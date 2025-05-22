@@ -2,15 +2,18 @@
     "productos":[
         {"nombre": "lenovo 90",
           "precio": 400,
-          "categoria": "informática"
+          "categoria": "informática",
+          "comentarios":["bien","mal","estupendo"]
         },
         {"nombre": "Samsung S20",
           "precio": 800,
-          "categoria": "Móviles"
+          "categoria": "Móviles",
+          "comentarios":["bien","mal","estupendo"]
         },
         {"nombre": "Red dead redemption",
           "precio": 60,
-          "categoria": "Juegos"
+          "categoria": "Juegos",
+          "comentarios":["bien","mal"]
         }
         
     ]
