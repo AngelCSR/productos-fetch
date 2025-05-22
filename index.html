@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista productos</h1>
+    <table id="lista-prod">
+
+    </table>
+    <script>
+        fetch("productos.json")
+        .then(response=>response.json())
+        .then(datos=>{
+            for(producto of datos.productos) {
+                nuevaFila=document.createElement("tr");
+                clolumnaNombre=document.createElement("td");
+                clolumnaPrecio=document.createElement("td");
+                clolumnaCategoria=document.createElement("td");
+                clolumnaNombre.innerHTML=producto.nombre;
+                clolumnaPrecio.innerHTML=producto.precio;
+                clolumnaCategoria.innerHTML=producto.categoria;
+                //agrego las columnas a la fila
+                nuevaFila.appendChild(clolumnaNombre);
+                nuevaFila.appendChild(clolumnaPrecio);
+                nuevaFila.appendChild(clolumnaCategoria);
+                document.getElementById("lista-prod").appendChild(nuevaFila);
+            }
+        })
+    </script>
+
+</body>
+</html>
